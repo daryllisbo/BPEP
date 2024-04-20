@@ -1,0 +1,254 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #FCFFFF;
+}
+
+.setting_sidebar {
+    height: 100vh;
+    width: 250px; /* Adjusted width */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222D7B;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 0; /* Removed padding top */
+}
+
+
+.setting_logo-container {
+    text-align: center; /* Center the content horizontally */
+    margin-top: 10px;
+}
+
+.setting_sidebar .setting_logo-container img {
+    width: 50px; /* Increased logo size */
+    height: 50px; /* Increased logo size */
+    margin-bottom: 10px; /* Add margin to separate from the title */
+    margin-top: 5px;
+}
+
+.setting_sidebar .setting_logo-container .title {
+    color: #ddd;
+    font-weight: bold;
+    font-size: 15px; /* Increased font size */
+    margin: 0; /* Adjusted margin */
+}
+
+/* Premium-looking design for sidebar */
+.setting_sidebar ul li a {
+    padding: 15px 15px; /* Adjusted padding */
+    text-decoration: none;
+    font-size: 16px;
+    color: #ddd;
+    display: block;
+    transition: 0.3s;
+    position: relative; /* Added */
+}
+
+.setting_sidebar ul li a:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+
+.setting_sidebar ul li a::before {
+    content: "";
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 4px;
+    height: 0;
+    margin-top: 26px;
+    background-color: lightgoldenrodyellow; /* Accent color */
+    transition: height 0.3s, top 0.3s;
+    border-radius: 2px;
+    transform: translateY(-50%);
+}
+
+.setting_sidebar ul li a:hover::before {
+    height: 100%;
+    top: 0;
+}
+
+.setting_sidebar ul {
+    padding: 0;
+    list-style-type: none; /* Remove bullets */
+}
+
+.setting_sidebar ul li a.active {
+    color: #fff;
+    background-color: #007bff; /* Background color when active */
+}
+
+.setting_sidebar ul li a[href="settings.php"] {
+    background: linear-gradient(to right, lightgoldenrodyellow 0%, lightgoldenrodyellow 4px, transparent 4px, transparent 100%);
+    background-color: #007bff; /* Background color when active */
+}
+
+.setting_sidebar ul li a[href="settings.php"]:hover {
+    background-color: #007bff; /* Hover color specific to "Product Out" tab */
+    color: #fff; /* Change text color on hover */
+}
+
+
+/* Styling for the user info */
+.user-info {
+    padding: 15px;
+    background-color: #192f6a; /* Dark blue color */
+    margin-top: 2px;
+    color: #fff; /* White text color */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 2px solid #fff; /* Add top border */
+    transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect */
+.user-info:hover {
+    background-color: #007bff; /* Darker blue color on hover */
+}
+
+/* Animation effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation */
+.user-info {
+    animation: slideIn 0.5s ease; /* Slide-in animation */
+}
+
+/* Settings link styles to match sidebar */
+.settings-link a {
+    display: block;
+    padding: 15px 15px; /* Adjust padding to match other items */
+    font-size: 16px; /* Adjust font size to match other items */
+    color: #ddd; /* Text color to match other items */
+    text-decoration: none;
+    transition: 0.3s;
+    border-top: 1px solid #2c3e50; /* Separator line, adjust color as needed */
+    margin-top: 175px;
+}
+
+.settings-link a:hover {
+    background-color: #007bff; /* Background color on hover to match other items */
+    color: #fff; /* Text color on hover */
+}
+
+.settings-link a::before {
+    content: "";
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: lightgoldenrodyellow; /* Side bar color */
+    transition: height 0.3s, top 0.3s;
+    border-radius: 2px;
+}
+
+.settings-link a:hover::before {
+    height: 6.5%; /* Full height on hover */
+    bottom: 62px; /* Align to top */
+}
+
+/* Main Content Styles (Settings Tab) */
+
+/* Main Content Styles (Settings Tab) */
+
+/* Content Styles */
+.content {
+    margin-left: 280px; /* Adjusted for sidebar width */
+    padding: 40px;
+}
+
+.settings-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.settings-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.button-wrapper {
+    text-align: right; /* Aligns the buttons to the right */
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right side */
+    align-items: center; /* Centers items vertically */
+    gap: 10px; /* Adds space between buttons */
+}
+
+/* Updated File Input Button Style */
+.file-input-button {
+    background-color: #3e9f89; /* Keeps your original green color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px; /* Larger font size for better readability */
+}
+
+/* Updated Import Button Style */
+.import-button {
+    background-color: #4CAF50; /* Matches the green color from the first picture */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.import-button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Additional styles for Download Template Button */
+.download-button {
+    background-color: #4CAF50; /* Matches the green color from the first picture */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    display: inline-block; /* Aligns with other inline elements */
+}
+
+.download-button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* File Input Wrapper Styles for consistency */
+.file-input-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Adds a border to the input wrapper */
+}
+
+

@@ -1,0 +1,599 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #FCFFFF;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px; /* Adjusted width */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222D7B;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 0; /* Removed padding top */
+}
+
+
+.logo-container {
+    text-align: center; /* Center the content horizontally */
+    margin-top: 10px;
+}
+
+.sidebar .logo-container img {
+    width: 50px; /* Increased logo size */
+    height: 50px; /* Increased logo size */
+    margin-bottom: 10px; /* Add margin to separate from the title */
+    margin-top: -5px;
+}
+
+.sidebar .logo-container .title {
+    color: #ddd;
+    font-weight: bold;
+    font-size: 15px; /* Increased font size */
+    margin: 0; /* Adjusted margin */
+}
+
+/* Premium-looking design for sidebar */
+.sidebar ul li a {
+    padding: 15px 15px; /* Adjusted padding */
+    text-decoration: none;
+    font-size: 16px;
+    color: #ddd;
+    display: block;
+    transition: 0.3s;
+    position: relative; /* Added */
+}
+
+.sidebar ul li a:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+
+.sidebar ul li a::before {
+    content: "";
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 4px;
+    height: 0;
+    margin-top: 26px;
+    background-color: lightgoldenrodyellow; /* Accent color */
+    transition: height 0.3s, top 0.3s;
+    border-radius: 2px;
+    transform: translateY(-50%);
+}
+
+.sidebar ul li a:hover::before {
+    height: 100%;
+    top: 0;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style-type: none; /* Remove bullets */
+}
+
+.sidebar ul li a.active {
+    color: #fff;
+    background-color: #007bff; /* Background color when active */
+}
+
+.sidebar ul li a[href="../homepage/index.php"] {
+    background: linear-gradient(to right, lightgoldenrodyellow 0%, lightgoldenrodyellow 4px, transparent 4px, transparent 100%);
+    background-color: #007bff; /* Background color when active */
+}
+
+.sidebar ul li a[href="./index.php"]:hover {
+    background-color: #007bff; /* Hover color specific to "Product Out" tab */
+    color: #fff; /* Change text color on hover */
+}
+
+.sidebar ul li a[href="../sign-in/login.html"].active {
+    background-color: transparent; /* Remove background color for the logout link when active */
+}
+
+
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Adjusted position to accommodate wider sidebar */
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    z-index: 0; /* Behind the sidebar */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    border-left: 1px solid #ddd; /* Added border to separate sidebar and content */
+    overflow-x: hidden;
+}
+
+
+.container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FCFFFF;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust opacity as needed */
+    z-index: -1;
+    overflow-x: hidden;
+}
+
+.inventory-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    margin-left: -40px;
+    margin-right: -30px;
+    border-bottom: #333 2px solid;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.inventory-header h1 {
+    color: #333;
+    margin: 0;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 78%;
+    margin-top: -33px;
+    margin-bottom: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ddd;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    border-radius: 0 5px 5px 0;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.add-item-button {
+    padding: 8px 17px;
+    background-color: #007bff;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 0;
+    
+}
+
+.exporty {
+    padding: 8px 17px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 0;
+}
+
+.exporty:hover{
+    background-color: #1b5a1e;
+}
+
+.add-item-button:hover {
+    background-color: #222D7B;
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    background-color: #222D7B;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd; /* Add vertical border */
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    max-height: 400px; /* Adjust max height based on your design */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Styling for the user info */
+.user-info {
+    padding: 15px;
+    background-color: #192f6a; /* Dark blue color */
+    margin-top: 2px;
+    color: #fff; /* White text color */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 2px solid #fff; /* Add top border */
+    transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect */
+.user-info:hover {
+    background-color: #007bff; /* Darker blue color on hover */
+}
+
+/* Animation effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation */
+.user-info {
+    animation: slideIn 0.5s ease; /* Slide-in animation */
+}
+
+.view-details-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .view-details-btn {
+        background-color: #4CAF50; /* Green background color */
+        color: #fff; /* White text color */
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for premium look */
+    }
+
+    .view-details-btn:hover {
+        background-color: #1b5a1e; /* Darker green on hover */
+    }
+
+.update-button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-button:hover {
+    background-color: #1b5a1e;
+}
+
+/* Add this CSS code to your existing CSS styles */
+/* Pager styles */
+.pager-container {
+    text-align: center; /* Centers the pagination links */
+}
+
+.pager {
+    display: inline-block; /* Aligns pager items in a row */
+    padding-left: 0; /* Removes padding from the list */
+}
+
+.pager li {
+    display: inline; /* Displays the list items inline */
+}
+
+.pager li a {
+    color: #0056b3;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 0 5px; /* Controls the space between pager items */
+    text-decoration: none;
+}
+
+.pager li a:hover,
+.pager li a.active {
+    color: #fff;
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+.pager .prev,
+.pager .next {
+    font-weight: bold;
+}
+
+.pager .ellipsis {
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+
+.pager a.active {
+    background-color: #4CAF50; /* Green color for active page */
+}
+
+
+.form-group {
+    margin-left: 65px;
+    margin-top: 20px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal content styles */
+.modal-content {
+    background-color: #f9f9f9;
+    margin: 10% auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Close button styles */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.addtitle {
+    text-align: center;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Added color for labels */
+}
+
+input[type="text"] {
+    width: calc(100% - 22px); /* Adjusted width to accommodate the icon */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 38%;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Update button in the modal */
+.update-price-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+    /* Center the button */
+    margin-top: 20px;
+    /* Add margin to separate from input */
+}
+
+.update-price-btn:hover {
+    background-color: #45a049;
+}
+
+/* Input field in the modal */
+.modal-content input[type="text"] {
+    width: calc(100% - 30px);
+    padding: 10px 15px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.sort-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.sort-button:hover {
+    color: #007bff;
+}
+
+/* Styles for export buttons */
+.export-button {
+    padding: 10px 20px;
+    background-color: #ff9900; /* Premium-looking color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+}
+
+.export-button:hover {
+    background-color: #e68a00; /* Darker shade on hover */
+}
+
+/* Additional styles for the container to accommodate the buttons */
+.action-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Settings link styles to match sidebar */
+.settings-link a {
+    display: block;
+    padding: 15px 15px; /* Adjust padding to match other items */
+    font-size: 16px; /* Adjust font size to match other items */
+    color: #ddd; /* Text color to match other items */
+    text-decoration: none;
+    transition: 0.3s;
+    border-top: 1px solid #2c3e50; /* Separator line, adjust color as needed */
+    margin-top: 175px;
+}
+
+.settings-link a:hover {
+    background-color: #007bff; /* Background color on hover to match other items */
+    color: #fff; /* Text color on hover */
+}
+
+.settings-link a::before {
+    content: "";
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: lightgoldenrodyellow; /* Side bar color */
+    transition: height 0.3s, top 0.3s;
+    border-radius: 2px;
+}
+
+.settings-link a:hover::before {
+    height: 6.5%; /* Full height on hover */
+    bottom: 70px; /* Align to top */
+}
+
+/* Adjust the sidebar top margin to accommodate the settings link */
+.sidebar {
+    padding-top: 10px; /* Adjust as needed */
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa; /* Or any other color that fits your design */
+}
+
+.total-entries {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.required {
+    color: red;
+    margin-left: 5px; /* Adjust the spacing as needed */
+}
+
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 700px) {
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .add-item-button {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .export-button {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}

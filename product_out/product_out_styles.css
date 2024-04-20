@@ -1,0 +1,356 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/product.png");
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 95%; /* Scale down the image */
+    background-position: calc(50% + 10px) calc(30% - 10px); /* Move it to the right by 20px */
+    overflow-x: hidden;
+}
+
+.items-container-product {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 80px 20px 20px;
+    text-align: center;
+}
+
+.container h1 {
+    color: #333;
+    margin-top: 0;
+}
+
+.product-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: calc(50% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.serial-number {
+    height: 80px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    width: calc(50% - 22px);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 150px;
+}
+
+.btn:hover {
+    background-color: #222D7B;
+}
+
+.btn.add-item {
+    background-color: #28a745;
+}
+
+.btn.add-item:hover {
+    background-color: #1b5a1e;
+}
+
+.btn.export {
+    background-color: #28a745;
+}
+
+.btn.export:hover {
+    background-color: #1b5a1e;
+}
+
+.product-sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222D7B;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.product-logo-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product-sidebar .product-logo-container img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.product-sidebar .product-logo-container .title {
+    color: #ddd;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+}
+
+.product-sidebar ul li a {
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ddd;
+    display: block;
+    transition: 0.3s;
+    position: relative;
+}
+
+.product-sidebar ul li a:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.product-sidebar ul li a::before {
+    content: "";
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 4px;
+    height: 0;
+    margin-top: 26px;
+    background-color: lightgoldenrodyellow;
+    transition: height 0.3s, top 0.3s;
+    border-radius: 2px;
+    transform: translateY(-50%);
+}
+
+.product-sidebar ul li a:hover::before {
+    height: 100%;
+    top: 0;
+}
+
+.product-sidebar ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.product-sidebar ul li a.active {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.product-sidebar ul li a[href="../product_out/index.php"] {
+    background: linear-gradient(to right, lightgoldenrodyellow 0%, lightgoldenrodyellow 4px, transparent 4px, transparent 100%);
+    background-color: #007bff;
+}
+
+.product-sidebar ul li a[href="../product_out/index.php"]:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.conth1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #333 2px solid;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+.conth1 h1 {
+    color: #333;
+    margin: 0;
+}
+
+/* Additional CSS Styles */
+
+.btn-group-product {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -10px;
+    margin-left: -70px;
+}
+
+.iconsubmit {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.two-button-product {
+    margin-left: 130px;
+}
+
+input[type="date"] {
+    width: calc(50% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="date"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.new-serial-numbers {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 47.3%;
+}
+
+.form-group.quantity {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: -5px;
+}
+
+.quantity {
+    margin-top: 10px;
+    margin-left: -5px;
+}
+
+.product-form-group.quantity label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: 10px;
+    margin-left: 5px;
+}
+
+.product-form-group.quantity input {
+    width: 9%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center !important;
+    margin-left: 5px;
+}
+
+.error {
+    border: 1px solid red; /* Add a red border for visual indication */
+}
+
+.required {
+    color: red;
+    margin-left: 5px; /* Adjust the spacing as needed */
+}
+
+.remove-item {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Give it some space from the top */
+}
+
+.settings-link a {
+    display: block;
+    padding: 15px 15px; /* Adjust padding to match other items */
+    font-size: 16px; /* Adjust font size to match other items */
+    color: #ddd; /* Text color to match other items */
+    text-decoration: none;
+    transition: 0.3s;
+    border-top: 1px solid #2c3e50; /* Separator line, adjust color as needed */
+    margin-top: 175px;
+}
+
+.settings-link a:hover {
+    background-color: #007bff; /* Background color on hover to match other items */
+    color: #fff; /* Text color on hover */
+}
+
+.settings-link a::before {
+    content: "";
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: lightgoldenrodyellow; /* Side bar color */
+    transition: height 0.3s, top 0.3s;
+    border-radius: 2px;
+}
+
+.settings-link a:hover::before {
+    height: 6.5%; /* Full height on hover */
+    bottom: 63px; /* Align to top */
+}
+
+/* Styling for the user info */
+.user-info {
+    padding: 15px;
+    background-color: #192f6a; /* Dark blue color */
+    margin-top: 2px;
+    color: #fff; /* White text color */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 2px solid #fff; /* Add top border */
+    transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect */
+.user-info:hover {
+    background-color: #007bff; /* Darker blue color on hover */
+}
+
+/* Animation effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation */
+.user-info {
+    animation: slideIn 0.5s ease; /* Slide-in animation */
+}

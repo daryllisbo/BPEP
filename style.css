@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./img/sakto.png");
+    background-size: cover; /* or background-size: contain; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 350px;
+    background: #fcffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    margin-right: 50%;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 40px);
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    font-size: 16px;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #bbb;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #222D7B;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+.input-icon {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-icon input {
+    padding-left: 40px; /* Increase padding to accommodate the icon */
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjusted left position */
+    transform: translateY(-50%);
+    color: #555;
+}
+
+.error-message {
+    background-color: #ffcccc;
+    color: #ff0000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
